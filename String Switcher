@@ -1,0 +1,16 @@
+/* Write a method that takes in a string and an array of indices in the
+string. Produce a new string, which contains letters from the input
+string in the order specified by the indices of the array of indices.
+
+ Difficulty: medium.
+"Walri", [0,3,4,2,1] */
+
+function YeOldeSwitcheroo(str,arr){
+    var answer = [];
+    answer.length = str.length;
+    for (var i=0; i<arr.length; i++){
+        var x = arr[i];
+        answer[i]= str[x]; 
+    }
+    return answer.join("");
+}
