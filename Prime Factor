@@ -1,0 +1,16 @@
+/* Returns the highest factor of the number that is also prime*/
+
+function PrimeFactor(num){
+    for (var i=num-1; i>=2; i--){
+        var notPrime=0;
+        for (var j=2; j<=i-1; j++){
+            if (i%j===0){
+                notPrime++;
+            }
+        }
+        if (notPrime<1 && num%i===0){
+            return i;
+        }
+    }
+    return 1;
+}
