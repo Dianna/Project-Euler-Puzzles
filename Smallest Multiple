@@ -1,0 +1,24 @@
+/* Smallest Multiple:
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20? 
+This function is super processor intensive, fyi (sure that's obvious though) */
+
+function SmallestMultiple (low,high){
+    var range = [];
+    for (var i=low; i<=high; i++){
+        range.push(i);
+    }
+    for (var j= 2520; j<1000000000; j++){
+        var divisible = true;
+        for (i =0; i<range.length; i++){
+            if (j%range[i]!==0){
+                divisible=false;
+            }
+        }
+        if (divisible === true){
+            return j;
+        }
+    }
+}
+SmallestMultiple(1,18);
