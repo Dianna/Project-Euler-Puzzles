@@ -1,0 +1,17 @@
+/* Adds all numbers in fibonacci sequence up to and including the provided number */
+
+function FibonacciAdder(num){
+    var total = 0;
+    var previous = 1;
+    var step = 1;
+    for (var i=2; i<=num; i+=step){
+        if (i%2===0){
+            total += i;
+        }
+        step = previous;
+        previous = i;
+    }
+    return total;
+}
+
+FibonacciAdder(200);
