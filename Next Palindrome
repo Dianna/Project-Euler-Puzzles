@@ -1,0 +1,39 @@
+/* Take the inputted number and return the next palindrome above it. Example 801 ->808 
+-- I misread this the first time as "first prime" so I've created both functions (809 in
+the above case) */
+
+
+//finds next prime
+function NextPrime(num){
+    for (var i=num+1; i<=num+1000; i++){
+        var isPrime = true;
+        for (var j=2; j<i; j++){
+            if (i%j===0){
+                isPrime= false;
+            }
+        }
+        if (isPrime === true){
+            return i;
+        }
+    }
+}
+
+
+//finds next palindrome
+function NextPalindrome(num){
+    for (var i=num+1; i<num+1000; i++){
+        var number = i.toString().split("");
+        var isPal = true;
+        var x=0;
+        for (var j= number.length-1; j>=0; j--){
+            if (number[j]!==number[x]){
+                isPal = false;
+            }
+            x++;
+        }
+       if (isPal===true){
+           return i;
+       }
+    }
+}
+NextPalindrome(801);
